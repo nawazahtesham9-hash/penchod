@@ -1,0 +1,1031 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Steampunk Daz Mogg | Modern Steampunk Wooden Creations</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700;800&family=Raleway:wght@300;400;500;600&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --walnut: #5C3A21;
+            --copper: #B87333;
+            --charcoal: #2C2C2C;
+            --beige: #F5F0E1;
+            --light-copper: #d89b63;
+            --dark-charcoal: #1a1a1a;
+        }
+        
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: 'Raleway', sans-serif;
+            color: var(--charcoal);
+            background-color: var(--beige);
+            line-height: 1.6;
+        }
+        
+        h1, h2, h3, h4 {
+            font-family: 'Playfair Display', serif;
+            font-weight: 700;
+            color: var(--walnut);
+        }
+        
+        .container {
+            width: 90%;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+        
+        /* Header & Navigation */
+        header {
+            background-color: var(--charcoal);
+            padding: 1.2rem 0;
+            position: fixed;
+            width: 100%;
+            z-index: 100;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.2);
+        }
+        
+        .header-container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        
+        .logo {
+            font-family: 'Playfair Display', serif;
+            font-size: 1.8rem;
+            color: var(--copper);
+            text-decoration: none;
+            display: flex;
+            align-items: center;
+        }
+        
+        .logo i {
+            margin-right: 10px;
+            color: var(--copper);
+        }
+        
+        .nav-toggle {
+            display: none;
+            background: none;
+            border: none;
+            color: var(--copper);
+            font-size: 1.5rem;
+            cursor: pointer;
+        }
+        
+        .nav-links {
+            display: flex;
+            list-style: none;
+        }
+        
+        .nav-links li {
+            margin-left: 2rem;
+        }
+        
+        .nav-links a {
+            color: var(--beige);
+            text-decoration: none;
+            font-weight: 500;
+            transition: color 0.3s;
+            position: relative;
+        }
+        
+        .nav-links a::after {
+            content: '';
+            position: absolute;
+            width: 0;
+            height: 2px;
+            bottom: -5px;
+            left: 0;
+            background-color: var(--copper);
+            transition: width 0.3s;
+        }
+        
+        .nav-links a:hover::after,
+        .nav-links a.active::after {
+            width: 100%;
+        }
+        
+        .nav-links a:hover,
+        .nav-links a.active {
+            color: var(--copper);
+        }
+        
+        /* Hero Section */
+        .hero {
+            padding-top: 120px;
+            padding-bottom: 80px;
+            background: linear-gradient(rgba(44, 44, 44, 0.7), rgba(44, 44, 44, 0.7)), url('https://storage.googleapis.com/workspace-0f70711f-8b4e-4d94-86f1-2a93ccde5887/image/0d12bcf8-2141-4e48-b3ff-1fc3ee9035d1.png') no-repeat center center/cover;
+            color: var(--beige);
+            text-align: center;
+        }
+        
+        .hero-content {
+            max-width: 800px;
+            margin: 0 auto;
+        }
+        
+        .hero h1 {
+            font-size: 3.2rem;
+            margin-bottom: 1.5rem;
+            color: var(--beige);
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+        }
+        
+        .hero p {
+            font-size: 1.2rem;
+            margin-bottom: 2.5rem;
+            color: var(--beige);
+        }
+        
+        .btn {
+            display: inline-block;
+            background-color: var(--copper);
+            color: var(--beige);
+            padding: 14px 32px;
+            text-decoration: none;
+            border-radius: 4px;
+            font-weight: 600;
+            transition: background-color 0.3s, transform 0.3s;
+            border: none;
+            cursor: pointer;
+            font-size: 1rem;
+            margin: 0 10px;
+        }
+        
+        .btn-outline {
+            background-color: transparent;
+            border: 2px solid var(--copper);
+            color: var(--copper);
+        }
+        
+        .btn:hover {
+            background-color: var(--light-copper);
+            transform: translateY(-3px);
+        }
+        
+        .btn-outline:hover {
+            background-color: var(--copper);
+            color: var(--beige);
+        }
+        
+        /* Section Styling */
+        section {
+            padding: 5rem 0;
+        }
+        
+        .section-title {
+            text-align: center;
+            margin-bottom: 3rem;
+            position: relative;
+        }
+        
+        .section-title::after {
+            content: '';
+            display: block;
+            width: 80px;
+            height: 3px;
+            background-color: var(--copper);
+            margin: 15px auto;
+        }
+        
+        /* About Section */
+        .about-content {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 3rem;
+            align-items: center;
+        }
+        
+        .about-text h2 {
+            margin-bottom: 1.5rem;
+            color: var(--walnut);
+        }
+        
+        .about-image {
+            position: relative;
+        }
+        
+        .about-image img {
+            width: 100%;
+            border-radius: 8px;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+        }
+        
+        .image-overlay {
+            position: absolute;
+            bottom: -15px;
+            right: -15px;
+            width: 150px;
+            height: 150px;
+            background-color: var(--copper);
+            z-index: -1;
+            border-radius: 8px;
+        }
+        
+        /* Products Section */
+        .products {
+            background-color: var(--charcoal);
+            color: var(--beige);
+        }
+        
+        .products .section-title {
+            color: var(--beige);
+        }
+        
+        .products .section-title::after {
+            background-color: var(--copper);
+        }
+        
+        .filter-buttons {
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+            margin-bottom: 2.5rem;
+            gap: 1rem;
+        }
+        
+        .filter-btn {
+            background-color: transparent;
+            border: 2px solid var(--copper);
+            color: var(--copper);
+            padding: 8px 20px;
+            border-radius: 30px;
+            cursor: pointer;
+            transition: all 0.3s;
+            font-weight: 500;
+        }
+        
+        .filter-btn.active,
+        .filter-btn:hover {
+            background-color: var(--copper);
+            color: var(--beige);
+        }
+        
+        .products-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+            gap: 2rem;
+        }
+        
+        .product-card {
+            background-color: var(--dark-charcoal);
+            border-radius: 8px;
+            overflow: hidden;
+            transition: transform 0.3s, box-shadow 0.3s;
+            position: relative;
+        }
+        
+        .product-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 10px 25px rgba(184, 115, 51, 0.3);
+        }
+        
+        .product-image {
+            height: 220px;
+            overflow: hidden;
+        }
+        
+        .product-image img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.5s;
+        }
+        
+        .product-card:hover .product-image img {
+            transform: scale(1.1);
+        }
+        
+        .product-info {
+            padding: 1.5rem;
+        }
+        
+        .product-info h3 {
+            margin-bottom: 0.5rem;
+            color: var(--copper);
+        }
+        
+        .product-info p {
+            margin-bottom: 1rem;
+            color: var(--beige);
+        }
+        
+        .product-overlay {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(to bottom, rgba(92, 58, 33, 0.8), rgba(184, 115, 51, 0.8));
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            opacity: 0;
+            transition: opacity 0.3s;
+        }
+        
+        .product-card:hover .product-overlay {
+            opacity: 1;
+        }
+        
+        .overlay-text {
+            text-align: center;
+            color: var(--beige);
+            padding: 20px;
+        }
+        
+        /* Custom Orders Section */
+        .custom-orders {
+            background-color: var(--beige);
+        }
+        
+        .custom-content {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 3rem;
+            align-items: center;
+        }
+        
+        .custom-image img {
+            width: 100%;
+            border-radius: 8px;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+        }
+        
+        .order-form {
+            background-color: white;
+            padding: 2.5rem;
+            border-radius: 8px;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+        }
+        
+        .form-group {
+            margin-bottom: 1.5rem;
+        }
+        
+        .form-group label {
+            display: block;
+            margin-bottom: 0.5rem;
+            font-weight: 600;
+            color: var(--charcoal);
+        }
+        
+        .form-group input,
+        .form-group textarea {
+            width: 100%;
+            padding: 12px;
+            border: 1px solid #ddd;
+            border-radius: 4px;
+            font-family: 'Raleway', sans-serif;
+        }
+        
+        .form-group textarea {
+            min-height: 120px;
+            resize: vertical;
+        }
+        
+        .file-upload {
+            background-color: #f9f9f9;
+            padding: 12px;
+            border: 2px dashed #ddd;
+            border-radius: 4px;
+            text-align: center;
+            cursor: pointer;
+            transition: border-color 0.3s;
+        }
+        
+        .file-upload:hover {
+            border-color: var(--copper);
+        }
+        
+        /* Testimonials Section */
+        .testimonials {
+            background-color: var(--charcoal);
+            color: var(--beige);
+        }
+        
+        .testimonials .section-title {
+            color: var(--beige);
+        }
+        
+        .testimonials .section-title::after {
+            background-color: var(--copper);
+        }
+        
+        .testimonial-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+            gap: 2rem;
+        }
+        
+        .testimonial-card {
+            background-color: var(--dark-charcoal);
+            padding: 2rem;
+            border-radius: 8px;
+            border-left: 4px solid var(--copper);
+        }
+        
+        .testimonial-text {
+            font-style: italic;
+            margin-bottom: 1.5rem;
+        }
+        
+        .testimonial-author {
+            font-weight: 700;
+            color: var(--copper);
+        }
+        
+        /* Contact Section */
+        .contact-content {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 3rem;
+        }
+        
+        .contact-info {
+            background-color: white;
+            padding: 2.5rem;
+            border-radius: 8px;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+        }
+        
+        .contact-detail {
+            display: flex;
+            align-items: flex-start;
+            margin-bottom: 1.5rem;
+        }
+        
+        .contact-icon {
+            font-size: 1.5rem;
+            color: var(--cooper);
+            margin-right: 1rem;
+            min-width: 30px;
+        }
+        
+        .social-links {
+            display: flex;
+            gap: 1rem;
+            margin-top: 2rem;
+        }
+        
+        .social-links a {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            width: 45px;
+            height: 45px;
+            background-color: var(--copper);
+            color: var(--beige);
+            border-radius: 50%;
+            text-decoration: none;
+            transition: background-color 0.3s, transform 0.3s;
+        }
+        
+        .social-links a:hover {
+            background-color: var(--walnut);
+            transform: translateY(-3px);
+        }
+        
+        .map-container {
+            border-radius: 8px;
+            overflow: hidden;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+            height: 100%;
+        }
+        
+        .map-container iframe {
+            width: 100%;
+            height: 100%;
+            min-height: 300px;
+            border: none;
+        }
+        
+        /* Footer */
+        footer {
+            background-color: var(--dark-charcoal);
+            color: var(--beige);
+            padding: 3rem 0 1.5rem;
+        }
+        
+        .footer-content {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 2rem;
+            margin-bottom: 2rem;
+        }
+        
+        .footer-section h3 {
+            color: var(--copper);
+            margin-bottom: 1.5rem;
+            font-size: 1.3rem;
+        }
+        
+        .footer-links {
+            list-style: none;
+        }
+        
+        .footer-links li {
+            margin-bottom: 0.8rem;
+        }
+        
+        .footer-links a {
+            color: var(--beige);
+            text-decoration: none;
+            transition: color 0.3s;
+        }
+        
+        .footer-links a:hover {
+            color: var(--copper);
+        }
+        
+        .copyright {
+            text-align: center;
+            padding-top: 1.5rem;
+            border-top: 1px solid rgba(184, 115, 51, 0.3);
+            font-size: 0.9rem;
+        }
+        
+        /* Responsive Design */
+        @media (max-width: 992px) {
+            .about-content,
+            .custom-content,
+            .contact-content {
+                grid-template-columns: 1fr;
+            }
+            
+            .hero h1 {
+                font-size: 2.5rem;
+            }
+        }
+        
+        @media (max-width: 768px) {
+            .nav-toggle {
+                display: block;
+            }
+            
+            .nav-links {
+                position: fixed;
+                flex-direction: column;
+                background-color: var(--charcoal);
+                width: 80%;
+                height: 100vh;
+                top: 0;
+                right: -80%;
+                padding: 100px 20px 20px;
+                transition: right 0.3s;
+                box-shadow: -5px 0 15px rgba(0, 0, 0, 0.2);
+            }
+            
+            .nav-links.active {
+                right: 0;
+            }
+            
+            .nav-links li {
+                margin: 1rem 0;
+            }
+            
+            .close-menu {
+                position: absolute;
+                top: 20px;
+                right: 20px;
+                background: none;
+                border: none;
+                color: var(--beige);
+                font-size: 1.5rem;
+                cursor: pointer;
+            }
+            
+            .hero h1 {
+                font-size: 2rem;
+            }
+            
+            .section-title {
+                font-size: 1.8rem;
+            }
+            
+            .btn {
+                display: block;
+                margin: 10px auto;
+                width: 200px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Header & Navigation -->
+    <header>
+        <div class="container header-container">
+            <a href="#" class="logo">
+                <i class="fas fa-cogs"></i> Steampunk Daz Mogg
+            </a>
+            
+            <button class="nav-toggle">
+                <i class="fas fa-bars"></i>
+            </button>
+            
+            <ul class="nav-links">
+                <button class="close-menu">
+                    <i class="fas fa-times"></i>
+                </button>
+                <li><a href="#home" class="active">Home</a></li>
+                <li><a href="#about">About</a></li>
+                <li><a href="#products">Products</a></li>
+                <li><a href="#custom">Custom Orders</a></li>
+                <li><a href="#contact">Contact</a></li>
+            </ul>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section id="home" class="hero">
+        <div class="container hero-content">
+            <h1>Modern Steampunk & Wooden Creations for Home & Office</h1>
+            <p>Custom library shelves, desks, chairs, tables, and more — handcrafted with precision and steampunk elegance.</p>
+            <div>
+                <a href="#products" class="btn">View Collection</a>
+                <a href="#custom" class="btn btn-outline">Request a Quote</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section id="about" class="about">
+        <div class="container">
+            <h2 class="section-title">About Our Craft</h2>
+            <div class="about-content">
+                <div class="about-text">
+                    <h2>Bespoke Steampunk Woodcraft</h2>
+                    <p>At Steampunk Daz Mogg, we design and craft bespoke wooden furniture with a modern steampunk twist. From stylish library shelves to ergonomic desks and multifunctional tables, every piece is handcrafted to suit your space and style.</p>
+                    <p>Our creations blend the warmth of natural wood with the industrial charm of steampunk aesthetics, featuring brass accents, mechanical elements, and exquisite craftsmanship.</p>
+                    <p>Each piece is made to order, ensuring that you receive a unique, high-quality furniture item that perfectly fits your needs and enhances your space.</p>
+                </div>
+                <div class="about-image">
+                    <img src="https://storage.googleapis.com/workspace-0f70711f-8b4e-4d94-86f1-2a93ccde5887/image/7035e156-062f-41ea-966e-d49476a82514.png" alt="Artisan workshop with woodworking tools and steampunk furniture in progress">
+                    <div class="image-overlay"></div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Products Section -->
+    <section id="products" class="products">
+        <div class="container">
+            <h2 class="section-title">Our Creations</h2>
+            
+            <div class="filter-buttons">
+                <button class="filter-btn active" data-filter="all">All</button>
+                <button class="filter-btn" data-filter="shelves">Shelves</button>
+                <button class="filter-btn" data-filter="desks">Desks</button>
+                <button class="filter-btn" data-filter="chairs">Chairs</button>
+                <button class="filter-btn" data-filter="tables">Tables</button>
+                <button class="filter-btn" data-filter="custom">Custom</button>
+            </div>
+            
+            <div class="products-grid">
+                <div class="product-card" data-category="shelves">
+                    <div class="product-image">
+                        <img src="https://storage.googleapis.com/workspace-0f70711f-8b4e-4d94-86f1-2a93ccde5887/image/2543fea1-9066-4129-9ceb-0e3fdc166666.png" alt="Elegant library shelves with brass fittings and warm wood finish">
+                    </div>
+                    <div class="product-info">
+                        <h3>Library Shelves</h3>
+                        <p>Custom-built shelving with brass details and adjustable compartments.</p>
+                    </div>
+                    <div class="product-overlay">
+                        <div class="overlay-text">
+                            <p>Perfect for book lovers and collectors. Message us for details or a quote.</p>
+                            <a href="#custom" class="btn">Enquire Now</a>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="product-card" data-category="desks">
+                    <div class="product-image">
+                        <img src="https://storage.googleapis.com/workspace-0f70711f-8b4e-4d94-86f1-2a93ccde5887/image/54fb7343-993f-4276-b3c7-333783a508cf.png" alt="Ergonomic writing desk with copper pipes and mechanical details">
+                    </div>
+                    <div class="product-info">
+                        <h3>Ergonomic Desk</h3>
+                        <p>Writing desk with adjustable height and industrial piping details.</p>
+                    </div>
+                    <div class="product-overlay">
+                        <div class="overlay-text">
+                            <p>Ideal for home offices. Message us for details or a quote.</p>
+                            <a href="#custom" class="btn">Enquire Now</a>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="product-card" data-category="chairs">
+                    <div class="product-image">
+                        <img src="https://storage.googleapis.com/workspace-0f70711f-8b4e-4d94-86f1-2a93ccde5887/image/1c08a510-325a-4bb2-979c-1cdc69594f31.png" alt="Comfortable leather armchair with visible gear mechanisms">
+                    </div>
+                    <div class="product-info">
+                        <h3>Leather Armchair</h3>
+                        <p>Comfortable reading chair with exposed mechanical elements.</p>
+                    </div>
+                    <div class="product-overlay">
+                        <div class="overlay-text">
+                            <p>Perfect for cozy reading nooks. Message us for details or a quote.</p>
+                            <a href="#custom" class="btn">Enquire Now</a>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="product-card" data-category="tables">
+                    <div class="product-image">
+                        <img src="https://storage.googleapis.com/workspace-0f70711f-8b4e-4d94-86f1-2a93ccde5887/image/11a16340-e4a6-48e2-9965-c8116bd72da4.png" alt="Solid wood coffee table with intricate copper inlay design">
+                    </div>
+                    <div class="product-info">
+                        <h3>Coffee Table</h3>
+                        <p>Solid wood table with copper inlay and mechanical leg design.</p>
+                    </div>
+                    <div class="product-overlay">
+                        <div class="overlay-text">
+                            <p>Centerpiece for your living room. Message us for details or a quote.</p>
+                            <a href="#custom" class="btn">Enquire Now</a>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="product-card" data-category="custom">
+                    <div class="product-image">
+                        <img src="https://storage.googleapis.com/workspace-0f70711f-8b4e-4d94-86f1-2a93ccde5887/image/b78d1b31-0d4d-4e13-bb3c-26fbee89999b.png" alt="Custom-designed home bar with brass fixtures and wood finish">
+                    </div>
+                    <div class="product-info">
+                        <h3>Home Bar Unit</h3>
+                        <p>Custom-designed bar with brass fixtures and storage solutions.</p>
+                    </div>
+                    <div class="product-overlay">
+                        <div class="overlay-text">
+                            <p>Perfect for entertainment spaces. Message us for details or a quote.</p>
+                            <a href="#custom" class="btn">Enquire Now</a>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="product-card" data-category="shelves">
+                    <div class="product-image">
+                        <img src="https://storage.googleapis.com/workspace-0f70711f-8b4e-4d94-86f1-2a93ccde5887/image/7cceddca-e8f3-42d6-821a-acefba151c9c.png" alt="Wall-mounted display shelves with brass brackets and piping">
+                    </div>
+                    <div class="product-info">
+                        <h3>Display Shelves</h3>
+                        <p>Wall-mounted shelves with industrial piping brackets.</p>
+                    </div>
+                    <div class="product-overlay">
+                        <div class="overlay-text">
+                            <p>Showcase your collections. Message us for details or a quote.</p>
+                            <a href="#custom" class="btn">Enquire Now</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Custom Orders Section -->
+    <section id="custom" class="custom-orders">
+        <div class="container">
+            <h2 class="section-title">Custom Orders</h2>
+            <div class="custom-content">
+                <div class="custom-image">
+                    <img src="https://storage.googleapis.com/workspace-0f70711f-8b4e-4d94-86f1-2a93ccde5887/image/af7f5638-76d5-4d5f-9112-988105446700.png" alt="Design process showing sketches and measurements for custom furniture">
+                </div>
+                
+                <div class="order-form">
+                    <h3>Request a Custom Quote</h3>
+                    <p>Have a vision? We can craft a custom piece just for you — functional, stylish, and uniquely yours.</p>
+                    
+                    <form>
+                        <div class="form-group">
+                            <label for="name">Your Name</label>
+                            <input type="text" id="name" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="email">Email Address</label>
+                            <input type="email" id="email" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="message">Project Details</label>
+                            <textarea id="message" required></textarea>
+                        </div>
+                        <div class="form-group">
+                            <label for="file">Upload Sketches or Photos (Optional)</label>
+                            <div class="file-upload">
+                                <i class="fas fa-cloud-upload-alt"></i>
+                                <span>Click to upload files</span>
+                                <input type="file" id="file" style="display: none;">
+                            </div>
+                        </div>
+                        <button type="submit" class="btn">Request a Quote</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Testimonials Section -->
+    <section class="testimonials">
+        <div class="container">
+            <h2 class="section-title">Client Testimonials</h2>
+            <div class="testimonial-grid">
+                <div class="testimonial-card">
+                    <p class="testimonial-text">"The library shelves Daz created for my study are absolutely stunning. The attention to detail and quality of craftsmanship exceeded my expectations. The brass accents add just the right steampunk touch without being overwhelming."</p>
+                    <p class="testimonial-author">- Eleanor R., Oxford</p>
+                </div>
+                
+                <div class="testimonial-card">
+                    <p class="testimonial-text">"I commissioned a custom desk for my home office, and I couldn't be happier. It's both functional and beautiful, with clever storage solutions and that unique steampunk aesthetic I was looking for. The process was collaborative and enjoyable."</p>
+                    <p class="testimonial-author">- Thomas W., London</p>
+                </div>
+                
+                <div class="testimonial-card">
+                    <p class="testimonial-text">"The coffee table is the centerpiece of our living room. Everyone who visits comments on its unique design and quality. The combination of warm wood and copper details is exactly what we wanted for our industrial-themed home."</p>
+                    <p class="testimonial-author">- Sophia M., Manchester</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="contact">
+        <div class="container">
+            <h2 class="section-title">Get In Touch</h2>
+            <div class="contact-content">
+                <div class="contact-info">
+                    <h3>Contact Information</h3>
+                    
+                    <div class="contact-detail">
+                        <div class="contact-icon">
+                            <i class="fas fa-map-marker-alt"></i>
+                        </div>
+                        <div>
+                            <h4>Address</h4>
+                            <p>123 Steampunk Lane, Artisan District<br>London, UK</p>
+                        </div>
+                    </div>
+                    
+                    <div class="contact-detail">
+                        <div class="contact-icon">
+                            <i class="fas fa-phone"></i>
+                        </div>
+                        <div>
+                            <h4>Phone</h4>
+                            <p>+44 20 1234 5678</p>
+                        </div>
+                    </div>
+                    
+                    <div class="contact-detail">
+                        <div class="contact-icon">
+                            <i class="fas fa-envelope"></i>
+                        </div>
+                        <div>
+                            <h4>Email</h4>
+                            <p>info@steampunkdazmogg.com</p>
+                        </div>
+                    </div>
+                    
+                    <div class="social-links">
+                        <a href="#"><i class="fab fa-facebook-f"></i></a>
+                        <a href="#"><i class="fab fa-instagram"></i></a>
+                        <a href="#"><i class="fab fa-pinterest"></i></a>
+                        <a href="#"><i class="fab fa-whatsapp"></i></a>
+                    </div>
+                </div>
+                
+                <div class="map-container">
+                    <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d158858.182370726!2d-0.10159865000000001!3d51.52864165!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x47d8a00baf21de75%3A0x52963a5addd52a99!2sLondon%2C%20UK!5e0!3m2!1sen!2s!4v1664354606973!5m2!1sen!2s" allowfullscreen="" loading="lazy"></iframe>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h3>Steampunk Daz Mogg</h3>
+                    <p>Creating bespoke wooden furniture with a modern steampunk twist for homes and offices across the UK.</p>
+                </div>
+                
+                <div class="footer-section">
+                    <h3>Quick Links</h3>
+                    <ul class="footer-links">
+                        <li><a href="#home">Home</a></li>
+                        <li><a href="#about">About</a></li>
+                        <li><a href="#products">Products</a></li>
+                        <li><a href="#custom">Custom Orders</a></li>
+                        <li><a href="#contact">Contact</a></li>
+                    </ul>
+                </div>
+                
+                <div class="footer-section">
+                    <h3>Our Services</h3>
+                    <ul class="footer-links">
+                        <li><a href="#">Custom Furniture</a></li>
+                        <li><a href="#">Interior Design Consultation</a></li>
+                        <li><a href="#">Restoration Services</a></li>
+                        <li><a href="#">UK Delivery & Installation</a></li>
+                    </ul>
+                </div>
+            </div>
+            
+            <div class="copyright">
+                <p>© 2023 Steampunk Daz Mogg. All rights reserved. | Handcrafted in the UK</p>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Mobile Navigation
+        const navToggle = document.querySelector('.nav-toggle');
+        const navLinks = document.querySelector('.nav-links');
+        const closeMenu = document.querySelector('.close-menu');
+        
+        navToggle.addEventListener('click', () => {
+            navLinks.classList.add('active');
+        });
+        
+        closeMenu.addEventListener('click', () => {
+            navLinks.classList.remove('active');
+        });
+        
+        // Close mobile menu when clicking on a link
+        document.querySelectorAll('.nav-links a').forEach(link => {
+            link.addEventListener('click', () => {
+                navLinks.classList.remove('active');
+            });
+        });
+        
+        // Product Filtering
+        const filterButtons = document.querySelectorAll('.filter-btn');
+        const productCards = document.querySelectorAll('.product-card');
+        
+        filterButtons.forEach(button => {
+            button.addEventListener('click', () => {
+                // Remove active class from all buttons
+                filterButtons.forEach(btn => btn.classList.remove('active'));
+                
+                // Add active class to clicked button
+                button.classList.add('active');
+                
+                const filterValue = button.getAttribute('data-filter');
+                
+                productCards.forEach(card => {
+                    if (filterValue === 'all' || card.getAttribute('data-category') === filterValue) {
+                        card.style.display = 'block';
+                    } else {
+                        card.style.display = 'none';
+                    }
+                });
+            });
+        });
+        
+        // Smooth scrolling for navigation links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                
+                const targetId = this.getAttribute('href');
+                if (targetId === '#') return;
+                
+                const targetElement = document.querySelector(targetId);
+                if (targetElement) {
+                    window.scrollTo({
+                        top: targetElement.offsetTop - 100,
+                        behavior: 'smooth'
+                    });
+                }
+            });
+        });
+        
+        // Form submission handling
+        const contactForm = document.querySelector('.order-form form');
+        if (contactForm) {
+            contactForm.addEventListener('submit', function(e) {
+                e.preventDefault();
+                alert('Thank you for your enquiry! We will get back to you shortly.');
+                this.reset();
+            });
+        }
+        
+        // File upload styling
+        const fileInput = document.getElementById('file');
+        const fileUpload = document.querySelector('.file-upload');
+        
+        fileInput.addEventListener('change', function() {
+            if (this.files.length > 0) {
+                fileUpload.innerHTML = `<i class="fas fa-check"></i> ${this.files.length} file(s) selected`;
+            }
+        });
+    </script>
+</body>
+</html>
